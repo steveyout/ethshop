@@ -2001,7 +2001,7 @@ withdrawscene.on('message',ctx => {
 })
 //withdrawaddress
 const greeterScene = new Scene('greeter')
-greeterScene.enter((ctx) => ctx.reply('send your BCH wallet address to be used for withdrawals below to update it',Markup
+greeterScene.enter((ctx) => ctx.reply('send your ETH wallet address to be used for withdrawals below to update it',Markup
     .keyboard([
         ['🛑cancel'], // Row1 with 2 buttons
     ])
