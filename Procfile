@@ -1,0 +1,1 @@
+web: node farmbitcoin.js
