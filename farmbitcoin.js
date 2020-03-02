@@ -38,7 +38,38 @@ var options = {
     , integer: true
 }
 //server
-
+var paypal = require('paypal-rest-sdk');
+paypal.configure({
+    'mode': 'live', //sandbox or live
+    'client_id': 'AfspktKBYPhnND5nFtZ9pnV15sCiLwc9kiEg4FrEk9AApUYQfvPE16fHlz0lQ9GETTPHxxyBlxU32SjZ',
+    'client_secret': 'EMgXzcs0WJnwNuE4DJ0tRec5neCDl9pv9RVqGcrrj73AtIV3ah6QEsc-LjrBLBeB3896oKvetVLTu_c_'
+});
+var create_payment_json = {
+    "intent": "sale",
+    "payer": {
+        "payment_method": "paypal"
+    },
+    "redirect_urls": {
+        "return_url": "http://return.url",
+        "cancel_url": "http://cancel.url"
+    },
+    "transactions": [{
+        "item_list": {
+            "items": [{
+                "name": "Refill account",
+                "sku": "Refill account",
+                "price": "20",
+                "currency": "USD",
+                "quantity": 1
+            }]
+        },
+        "amount": {
+            "currency": "USD",
+            "total": "20"
+        },
+        "description": "Bitcoinshop deposit."
+    }]
+};
 const {createServer} = require('http')
 const server = createServer(() => {})
 server.listen(process.env.PORT || 3000)
@@ -589,13 +620,20 @@ bot.hears('💸Balance',ctx => {
 
         currency = 'USD';
         rates.fromBTC(btcAmount, currency, function (err, rate) {
-            ctx.replyWithHTML('<b>user: </b>' + results[0].firstname + '\n<b>Purchase balance: </b>' + results[0].balance + ' 💰\n<b>Withdraw balance: </b>' + results[0].payout + ' 💰(' + btcAmount + ' ETH)' + '<i>\n📊 ' + btcAmount + ' ETH =$ ' + rate + '</i>\n\n<b>income in Bank:</b> ' + results[0].income + '💵\n<b>Payout points: </b>'+results[0].payoutpoints+' ⚡️\n\n<b>Account creation:</b> ' + results[0].time, Extra
-                .HTML()
-                .markup((m) => m.inlineKeyboard([
-                    m.callbackButton('💳Add ETH', '💳Add ETH'),
-                    m.callbackButton('🔰Withdraw', '🔰Withdraw')
-                ], {columns: 1})))
-
+            paypal.payment.create(create_payment_json, function (error, payment) {
+                if (error) {
+                    throw error;
+                } else {
+                    console.log("Create Payment Response");
+                    ctx.replyWithHTML('<b>user: </b>' + results[0].firstname + '\n<b>Purchase balance: </b>' + results[0].balance + ' 💰\n<b>Withdraw balance: </b>' + results[0].payout + ' 💰(' + btcAmount + ' BTC)' + '<i>\n📊 ' + btcAmount + ' BTC =$ ' + rate + '</i>\n\n<b>income in Bank:</b> ' + results[0].income + '💵\n<b>Payout points: </b>' + results[0].payoutpoints + ' ⚡️\n\n<b>Account creation:</b> ' + results[0].time, Extra
+                        .HTML()
+                        .markup((m) => m.inlineKeyboard([
+                            m.callbackButton('💳Add ETH', '💳Add ETH'),
+                            m.urlButton("Paypal Refill", payment.links[1].href),
+                            m.callbackButton('🔰Withdraw', '🔰Withdraw')
+                        ], {columns: 1})))
+                }
+            })
         })
     })
 

@@ -20,6 +20,7 @@
     "unirest": "^0.5.1",
     "pinnacle-sports-api": "^1.0.8",
     "random-item": "^1.0.0",
-    "bchaddrjs": "^0.4.3"
+    "bchaddrjs": "^0.4.3",
+    "paypal-rest-sdk": "^1.8.1"
   }
 }
