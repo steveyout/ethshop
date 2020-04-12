@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1a10f0ef-3126-456b-a983-10d201e88f73" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmbitcoin.js" beforeDir="false" afterPath="$PROJECT_DIR$/farmbitcoin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/now.json" beforeDir="false" afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,7 +19,7 @@
       <file leaf-file-name="farmbitcoin.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/farmbitcoin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="14605">
               <caret line="635" column="14" selection-start-line="635" selection-start-column="14" selection-end-line="635" selection-end-column="14" />
             </state>
           </provider>
@@ -63,8 +60,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state>
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -115,6 +112,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -126,7 +124,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,17 +242,20 @@
       <workItem from="1583172249726" duration="17000" />
       <workItem from="1583172327025" duration="84000" />
       <workItem from="1583172532788" duration="11000" />
+      <workItem from="1583172553339" duration="155000" />
+      <workItem from="1585466180123" duration="160000" />
+      <workItem from="1585560275272" duration="341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26998000" />
+    <option name="totallyTimeSpent" value="27654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24738416" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24663678" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -435,7 +435,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/farmbitcoin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="14605">
           <caret line="635" column="14" selection-start-line="635" selection-start-column="14" selection-end-line="635" selection-end-column="14" />
         </state>
       </provider>
@@ -449,8 +449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state>
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
